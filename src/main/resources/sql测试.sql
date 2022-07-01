@@ -241,3 +241,4 @@ update xuesheng set num=num+10000
 order by rand() limit 2;
 
 delete from xuesheng order by num limit 2;
+
