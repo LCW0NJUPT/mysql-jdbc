@@ -260,7 +260,14 @@ where employee_id=(
                group by manager_id) t));
 
 
-
+-- 多表查询
+select
+    e.employee_id,e.first_name,
+    d.department_name,
+    l.city
+from employees e join departments d on e.employee_id = d.manager_id
+join locations l on d.location_id = l.location_id
+;
 
 
 
