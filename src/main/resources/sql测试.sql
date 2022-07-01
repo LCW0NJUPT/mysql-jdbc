@@ -242,3 +242,31 @@ order by rand() limit 2;
 
 delete from xuesheng order by num limit 2;
 
+
+use hr;
+--
+select employee_id,first_name,salary
+from employees
+where employee_id=(
+    select manager_id
+    from employees
+    where manager_id is not null
+    group by manager_id
+    having count(*)=(
+        select max(c) from (
+               select manager_id,count(*) c
+               from employees
+               where manager_id is not null
+               group by manager_id) t));
+
+
+
+
+
+
+
+
+
+
+
+
