@@ -269,8 +269,8 @@ from employees e join departments d on e.employee_id = d.manager_id
 join locations l on d.location_id = l.location_id
 ;
 
-select now()
-from employees;
+
+
 
 
 
